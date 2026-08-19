@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xiaowen (Xaviera) Xu — People Analytics</title>
+<meta name="description" content="I translate people data into decisions that matter. People analytics &amp; learning analytics across Shanghai, London, and New York.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%233C3489'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='30' fill='%23FAF6F0' text-anchor='middle'%3EX%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAF6F0;
+    --bg-alt:#F1EAE0;
+    --card-bg:#FFFFFF;
+    --ink:#241F33;
+    --ink-soft:#5F5A63;
+    --ink-faint:#9B958F;
+    --accent:#3C3489;
+    --accent-soft:#EFEBFA;
+    --accent-2:#C9793B;
+    --line:rgba(36,31,51,0.12);
+    --shadow:0 1px 2px rgba(36,31,51,0.04), 0 8px 24px rgba(36,31,51,0.06);
+    --serif:'Fraunces', Georgia, 'Times New Roman', serif;
+    --sans:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#1B1724;
+      --bg-alt:#221C2E;
+      --card-bg:#241F33;
+      --ink:#F3EFE8;
+      --ink-soft:#C7C1D6;
+      --ink-faint:#8A8397;
+      --accent:#A79BF0;
+      --accent-soft:#2E2745;
+      --accent-2:#E0975B;
+      --line:rgba(243,239,232,0.12);
+      --shadow:0 1px 2px rgba(0,0,0,0.2), 0 8px 24px rgba(0,0,0,0.3);
+    }
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 28px;}
+  section{padding:96px 0;}
+  h1,h2,h3{font-family:var(--serif); font-weight:600; letter-spacing:-0.01em;}
+  .eyebrow{
+    font-size:13px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--accent-2); margin-bottom:14px; display:block;
+  }
+  h2.section-title{font-size:clamp(28px,4vw,38px); margin-bottom:44px;}
+
+  /* ---------- Nav ---------- */
+  header.site-nav{
+    position:sticky; top:0; z-index:50;
+    backdrop-filter:blur(10px);
+    background:color-mix(in srgb, var(--bg) 82%, transparent);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:1080px; margin:0 auto; padding:16px 28px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .nav-logo{
+    font-family:var(--serif); font-weight:600; font-size:19px; color:var(--ink);
+    text-decoration:none;
+  }
+  .nav-links{display:flex; gap:32px; list-style:none;}
+  .nav-links a{
+    font-size:14px; font-weight:500; text-decoration:none; color:var(--ink-soft);
+    transition:color .2s ease;
+  }
+  .nav-links a:hover{color:var(--accent);}
+  .nav-toggle{display:none; background:none; border:0; cursor:pointer; padding:4px;}
+  .nav-toggle span{display:block; width:22px; height:2px; background:var(--ink); margin:5px 0; transition:.25s;}
+  @media (max-width:720px){
+    .nav-links{
+      position:fixed; inset:0 0 0 auto; top:65px; width:100%;
+      flex-direction:column; gap:0; background:var(--bg);
+      transform:translateX(100%); transition:transform .3s ease;
+      padding:12px 28px 28px; border-top:1px solid var(--line);
+    }
+    .nav-links.open{transform:translateX(0);}
+    .nav-links li{border-bottom:1px solid var(--line);}
+    .nav-links a{display:block; padding:16px 0;}
+    .nav-toggle{display:block;}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative; padding:110px 0 130px; overflow:hidden;
+  }
+  .hero-bg{
+    position:absolute; inset:0; width:100%; height:100%;
+    z-index:0; opacity:0.55; pointer-events:none;
+  }
+  @media (prefers-color-scheme: dark){ .hero-bg{opacity:0.35;} }
+  .hero-bg path{
+    fill:none; stroke:var(--accent); stroke-width:1.6; stroke-linecap:round;
+    stroke-dasharray:2 12; animation:dash 26s linear infinite;
+  }
+  .hero-bg circle{fill:var(--accent-2);}
+  .hero-bg circle.pulse{
+    fill:none; stroke:var(--accent-2); stroke-width:1.4; opacity:.6;
+    animation:pulse 3.6s ease-out infinite;
+  }
+  .hero-bg circle:nth-of-type(2).pulse{animation-delay:1.1s;}
+  .hero-bg circle:nth-of-type(3).pulse{animation-delay:2.2s;}
+  @keyframes dash{to{stroke-dashoffset:-560;}}
+  @keyframes pulse{
+    0%{r:5; opacity:.65;}
+    100%{r:22; opacity:0;}
+  }
+  .hero-content{position:relative; z-index:1; max-width:720px;}
+  .hero h1{font-size:clamp(38px,6vw,58px); line-height:1.08; color:var(--ink);}
+  .hero .tagline{
+    font-family:var(--serif); font-style:italic; font-weight:500;
+    font-size:clamp(20px,2.6vw,26px); color:var(--accent); margin:20px 0 18px;
+  }
+  .hero .cities{
+    font-size:14px; font-weight:600; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--ink-faint); margin-bottom:36px;
+  }
+  .hero .cities span{color:var(--accent-2);}
+  .hero-ctas{display:flex; gap:16px; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:13px 24px; border-radius:999px; font-weight:600; font-size:14.5px;
+    text-decoration:none; transition:transform .18s ease, box-shadow .18s ease;
+    border:1px solid transparent;
+  }
+  .btn-primary{background:var(--accent); color:#fff;}
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 10px 24px rgba(60,52,137,0.28);}
+  .btn-ghost{border-color:var(--line); color:var(--ink);}
+  .btn-ghost:hover{transform:translateY(-2px); border-color:var(--accent); color:var(--accent);}
+
+  /* ---------- About ---------- */
+  .about-grid{
+    display:grid; grid-template-columns:280px 1fr; gap:56px; align-items:center;
+  }
+  @media (max-width:720px){ .about-grid{grid-template-columns:1fr; gap:32px;} }
+  .avatar{
+    width:220px; height:220px; border-radius:50%;
+    background:linear-gradient(155deg, var(--accent) 0%, var(--accent-2) 100%);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--serif); font-size:64px; color:#fff; font-weight:600;
+    box-shadow:var(--shadow); justify-self:center;
+  }
+  .about-text p{color:var(--ink-soft); font-size:17px; margin-bottom:18px; max-width:60ch;}
+  .about-text p:last-child{margin-bottom:0;}
+
+  /* ---------- Work ---------- */
+  .work-grid{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:24px;
+  }
+  .card{
+    background:var(--card-bg); border-radius:16px; padding:28px;
+    box-shadow:var(--shadow); border:1px solid var(--line);
+    transition:transform .22s ease, box-shadow .22s ease;
+    display:flex; flex-direction:column;
+  }
+  .card:hover{transform:translateY(-4px); box-shadow:0 16px 36px rgba(36,31,51,0.12);}
+  .card h3{font-size:20px; margin-bottom:10px;}
+  .card p.problem{color:var(--ink-soft); font-size:14.5px; margin-bottom:16px; flex-grow:1;}
+  .stack{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px;}
+  .stack span{
+    font-size:12px; font-weight:600; color:var(--accent);
+    background:var(--accent-soft); padding:4px 10px; border-radius:999px;
+  }
+  .card-links{display:flex; gap:18px;}
+  .card-links a{
+    font-size:13.5px; font-weight:600; text-decoration:none; color:var(--ink);
+    display:inline-flex; align-items:center; gap:5px; border-bottom:1px solid var(--ink);
+    padding-bottom:1px;
+  }
+  .card-links a:hover{color:var(--accent); border-color:var(--accent);}
+  .card.placeholder{
+    background:transparent; border:1.5px dashed var(--line); box-shadow:none;
+  }
+  .card.placeholder h3, .card.placeholder p, .card.placeholder .stack span{color:var(--ink-faint);}
+  .card.placeholder .stack span{background:transparent; border:1px dashed var(--line);}
+
+  /* ---------- Thinking ---------- */
+  .think-grid{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px;
+  }
+  .quote-card{
+    background:var(--bg-alt); border-radius:16px; padding:32px 28px;
+    display:flex; flex-direction:column; height:100%;
+  }
+  .quote-card .mark{font-family:var(--serif); font-size:44px; color:var(--accent-2); line-height:1; margin-bottom:8px;}
+  .quote-card blockquote{
+    font-family:var(--serif); font-style:italic; font-size:18px; color:var(--ink);
+    flex-grow:1; margin-bottom:20px;
+  }
+  .quote-card .read-more{
+    font-size:13.5px; font-weight:600; color:var(--accent); text-decoration:none;
+    display:inline-flex; align-items:center; gap:5px;
+  }
+  .quote-card .read-more:hover{text-decoration:underline;}
+
+  /* ---------- Experience ---------- */
+  .timeline{list-style:none; max-width:680px;}
+  .timeline li{
+    position:relative; padding:0 0 40px 32px; border-left:2px solid var(--line);
+  }
+  .timeline li:last-child{padding-bottom:0;}
+  .timeline li::before{
+    content:''; position:absolute; left:-7px; top:2px;
+    width:12px; height:12px; border-radius:50%;
+    background:var(--accent); border:3px solid var(--bg);
+    box-shadow:0 0 0 1px var(--accent);
+  }
+  .timeline .period{
+    font-size:12.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--accent-2); margin-bottom:6px; display:block;
+  }
+  .timeline h4{font-size:17px; font-weight:600; margin-bottom:3px;}
+  .timeline .place{color:var(--ink-faint); font-size:14px;}
+
+  /* ---------- Contact ---------- */
+  .contact-inner{text-align:center; max-width:560px; margin:0 auto;}
+  .contact-inner h2{font-size:clamp(26px,4vw,34px); margin-bottom:14px;}
+  .contact-inner p{color:var(--ink-soft); font-size:16px; margin-bottom:36px;}
+  .contact-links{display:flex; justify-content:center; gap:28px; flex-wrap:wrap;}
+  .contact-links a{
+    display:flex; flex-direction:column; align-items:center; gap:10px;
+    text-decoration:none; color:var(--ink-soft); font-size:13.5px; font-weight:600;
+    transition:color .2s ease;
+  }
+  .contact-links a:hover{color:var(--accent);}
+  .icon-circle{
+    width:52px; height:52px; border-radius:50%; background:var(--card-bg);
+    border:1px solid var(--line); display:flex; align-items:center; justify-content:center;
+    box-shadow:var(--shadow); transition:transform .2s ease, border-color .2s ease;
+  }
+  .contact-links a:hover .icon-circle{transform:translateY(-3px); border-color:var(--accent);}
+
+  footer{
+    text-align:center; padding:36px 0; color:var(--ink-faint); font-size:13px;
+    border-top:1px solid var(--line);
+  }
+
+  /* reveal-on-scroll */
+  .reveal{opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo">XX</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#thinking">Thinking</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <svg class="hero-bg" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <path d="M110,400 C300,220 420,440 610,270 C800,110 920,340 1100,150" />
+    <circle cx="110" cy="400" r="5"></circle>
+    <circle cx="110" cy="400" r="5" class="pulse"></circle>
+    <circle cx="610" cy="270" r="5"></circle>
+    <circle cx="610" cy="270" r="5" class="pulse"></circle>
+    <circle cx="1100" cy="150" r="5"></circle>
+    <circle cx="1100" cy="150" r="5" class="pulse"></circle>
+  </svg>
+  <div class="wrap hero-content">
+    <span class="eyebrow">People Analytics · Learning Analytics</span>
+    <h1>Xiaowen "Xaviera" Xu</h1>
+    <p class="tagline">I translate people data into decisions that matter.</p>
+    <p class="cities">Shanghai <span>→</span> London <span>→</span> New York</p>
+    <div class="hero-ctas">
+      <a href="#work" class="btn btn-primary">See my work</a>
+      <a href="#contact" class="btn btn-ghost">Get in touch</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about-grid reveal">
+    <!-- TODO: swap the monogram below for a real photo, e.g. <img src="assets/photo.jpg" alt="Xiaowen Xu"> -->
+    <div class="avatar">XX</div>
+    <div class="about-text">
+      <span class="eyebrow">About</span>
+      <p>I grew up in Shanghai, built my early career in London, and now call New York home while I finish my Master's in Learning Analytics at Teachers College, Columbia University. Each city taught me something the last one couldn't — Shanghai gave me a head for scale and speed, London taught me to ask <em>why</em> before <em>what</em>, and New York keeps pushing me to make the story land in the room.</p>
+      <p>Working across three cultures didn't just change my passport stamps — it changed how I read data. The same attrition number means something different to a manager in Shanghai than it does to one in London, and a dashboard is only as useful as the trust you've built before you present it. That's the lens I bring to people analytics: rigorous with the numbers, genuinely curious about the humans behind them.</p>
+    </div>
+  </div>
+</section>
+
+<section id="work" style="background:var(--bg-alt);">
+  <div class="wrap reveal">
+    <span class="eyebrow">Selected Work</span>
+    <h2 class="section-title">Projects</h2>
+    <div class="work-grid">
+      <div class="card">
+        <h3>Employee Attrition &amp; L&amp;D Analytics</h3>
+        <p class="problem">Which employees are quietly on their way out — and would investing in Learning &amp; Development actually change that? I built a decision-support dashboard that turns raw HR data into a defensible L&amp;D budget case, using SHAP to make the model's reasoning arguable, not just accurate.</p>
+        <div class="stack">
+          <span>Python</span><span>pandas</span><span>scikit-learn</span><span>SHAP</span><span>R / Shiny</span>
+        </div>
+        <div class="card-links">
+          <a href="https://github.com/xaviera0504/employee-attrition-ld-analytics" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="https://xaviera0504.shinyapps.io/employee-attrition-ld-analytics/" target="_blank" rel="noopener">Live demo ↗</a>
+        </div>
+      </div>
+
+      <!-- TODO: replace the placeholder cards below with real projects (title, problem, stack, links) -->
+      <div class="card placeholder">
+        <h3>Your next project</h3>
+        <p class="problem">Add the business problem this project solved, in one or two sentences.</p>
+        <div class="stack"><span>Tech stack</span></div>
+        <div class="card-links">
+          <a href="#">GitHub ↗</a>
+          <a href="#">Live demo ↗</a>
+        </div>
+      </div>
+
+      <div class="card placeholder">
+        <h3>Your next project</h3>
+        <p class="problem">Add the business problem this project solved, in one or two sentences.</p>
+        <div class="stack"><span>Tech stack</span></div>
+        <div class="card-links">
+          <a href="#">GitHub ↗</a>
+          <a href="#">Live demo ↗</a>
+        </div>
+      </div>
+
+      <div class="card placeholder">
+        <h3>Your next project</h3>
+        <p class="problem">Add the business problem this project solved, in one or two sentences.</p>
+        <div class="stack"><span>Tech stack</span></div>
+        <div class="card-links">
+          <a href="#">GitHub ↗</a>
+          <a href="#">Live demo ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="thinking">
+  <div class="wrap reveal">
+    <span class="eyebrow">How I Think</span>
+    <h2 class="section-title">Notes on data, AI &amp; learning</h2>
+    <!-- TODO: replace each excerpt + link below with a real excerpt and permalink from your LinkedIn posts -->
+    <div class="think-grid">
+      <div class="quote-card">
+        <span class="mark">&ldquo;</span>
+        <blockquote>Most attrition dashboards tell you who is leaving. Almost none tell you what would have kept them. That gap is where people analytics earns its keep.</blockquote>
+        <a class="read-more" href="#">Read the full post ↗</a>
+      </div>
+      <div class="quote-card">
+        <span class="mark">&ldquo;</span>
+        <blockquote>SHAP values didn't just make my model explainable — they made it arguable. If an HR leader can't push back on your AI, they won't trust it enough to act on it.</blockquote>
+        <a class="read-more" href="#">Read the full post ↗</a>
+      </div>
+      <div class="quote-card">
+        <span class="mark">&ldquo;</span>
+        <blockquote>We keep asking whether training "works." The better question is which moment in someone's first 18 months makes them decide to stay. Learning analytics lives in that moment.</blockquote>
+        <a class="read-more" href="#">Read the full post ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" style="background:var(--bg-alt);">
+  <div class="wrap reveal">
+    <span class="eyebrow">Experience</span>
+    <h2 class="section-title">The path here</h2>
+    <!-- TODO: fill in real roles, companies, and years for each stop below -->
+    <ul class="timeline">
+      <li>
+        <span class="period">[Years]</span>
+        <h4>[Your role]</h4>
+        <p class="place">[Company] · Shanghai</p>
+      </li>
+      <li>
+        <span class="period">[Years]</span>
+        <h4>[Your role]</h4>
+        <p class="place">[Company] · London</p>
+      </li>
+      <li>
+        <span class="period">[Years]</span>
+        <h4>[Your role]</h4>
+        <p class="place">[Company] · New York</p>
+      </li>
+      <li>
+        <span class="period">2026</span>
+        <h4>MS, Learning Analytics</h4>
+        <p class="place">Teachers College, Columbia University</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap contact-inner reveal">
+    <span class="eyebrow">Contact</span>
+    <h2>Let's talk about people, data, or both.</h2>
+    <p>Whether it's a role, a collaboration, or just a good conversation about learning analytics — I'd love to hear from you.</p>
+    <div class="contact-links">
+      <!-- TODO: swap in your real LinkedIn URL -->
+      <a href="#" target="_blank" rel="noopener">
+        <span class="icon-circle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6.94 8.5H3.56V20.5H6.94V8.5Z" fill="currentColor"/><path d="M5.25 7.06C6.35 7.06 7.25 6.16 7.25 5.06C7.25 3.96 6.35 3.06 5.25 3.06C4.15 3.06 3.25 3.96 3.25 5.06C3.25 6.16 4.15 7.06 5.25 7.06Z" fill="currentColor"/><path d="M20.5 13.63C20.5 10.14 18.72 8.5 15.99 8.5C14.34 8.5 13.14 9.24 12.42 10.53V8.75H9.19C9.24 9.7 9.19 20.5 9.19 20.5H12.42V14.02C12.42 13.66 12.44 13.3 12.55 13.04C12.85 12.31 13.53 11.55 14.67 11.55C16.17 11.55 17.27 12.5 17.27 14.34V20.5H20.5V13.63Z" fill="currentColor"/></svg>
+        </span>
+        LinkedIn
+      </a>
+      <a href="https://github.com/xaviera0504" target="_blank" rel="noopener">
+        <span class="icon-circle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.48 2 2 6.58 2 12.21C2 16.71 4.87 20.51 8.84 21.85C9.34 21.94 9.52 21.63 9.52 21.36C9.52 21.12 9.51 20.34 9.51 19.51C7 20.01 6.35 18.9 6.15 18.32C6.04 18.03 5.55 17.15 5.12 16.91C4.77 16.72 4.27 16.22 5.11 16.21C5.9 16.2 6.46 16.95 6.65 17.25C7.55 18.79 8.99 18.35 9.56 18.09C9.65 17.42 9.91 16.97 10.2 16.71C7.94 16.45 5.57 15.56 5.57 11.68C5.57 10.57 5.95 9.66 6.68 8.95C6.57 8.69 6.23 7.65 6.78 6.26C6.78 6.26 7.62 5.99 9.52 7.29C10.32 7.06 11.17 6.95 12.02 6.95C12.87 6.95 13.72 7.06 14.52 7.29C16.42 5.98 17.26 6.26 17.26 6.26C17.81 7.65 17.47 8.69 17.36 8.95C18.09 9.66 18.47 10.56 18.47 11.68C18.47 15.57 16.09 16.45 13.83 16.71C14.19 17.03 14.5 17.65 14.5 18.61C14.5 19.98 14.49 21.01 14.49 21.36C14.49 21.63 14.67 21.95 15.17 21.85C19.13 20.5 22 16.71 22 12.21C22 6.58 17.52 2 12 2Z" fill="currentColor"/></svg>
+        </span>
+        GitHub
+      </a>
+      <a href="mailto:xx2462@tc.columbia.edu">
+        <span class="icon-circle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 6.5L12 13L21 6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/></svg>
+        </span>
+        Email
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">&copy; 2026 Xiaowen Xu. Built with care across three time zones.</div>
+</footer>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
