@@ -169,7 +169,9 @@
     display:flex; align-items:center; justify-content:center;
     font-family:var(--serif); font-size:64px; color:#fff; font-weight:600;
     box-shadow:var(--shadow); justify-self:center;
+    overflow:hidden;
   }
+  .avatar img{width:100%; height:100%; object-fit:cover; border-radius:50%;}
   .about-text p{color:var(--ink-soft); font-size:17px; margin-bottom:18px; max-width:60ch;}
   .about-text p:last-child{margin-bottom:0;}
 
@@ -333,8 +335,7 @@
 
 <section id="about">
   <div class="wrap about-grid reveal">
-    <!-- TODO: swap the monogram below for a real photo, e.g. <img src="assets/photo.jpg" alt="Xiaowen Xu"> -->
-    <div class="avatar">XX</div>
+    <div class="avatar"><img src="assets/photo.jpg" alt="Xiaowen Xu" loading="lazy"></div>
     <div class="about-text">
       <span class="eyebrow">About</span>
       <p>I was born and raised in Chengdu, built my early career in London, moved to Shanghai for what became my last stop before New York, and now call this city home while I finish my Master's in Learning Analytics at Teachers College, Columbia University. Each place taught me something the last one couldn't — London taught me to ask <em>why</em> before <em>what</em>, Shanghai gave me a head for scale and speed, and New York keeps pushing me to make the story land in the room.</p>
@@ -454,22 +455,21 @@
   <div class="wrap reveal">
     <span class="eyebrow">How I Think</span>
     <h2 class="section-title">Notes on data, AI &amp; learning</h2>
-    <!-- TODO: swap href="#" on each card below for the real LinkedIn permalink -->
     <div class="think-grid">
       <div class="quote-card">
         <span class="mark">&ldquo;</span>
         <blockquote>The most dangerous analyst isn't the one who doesn't know the answer. It's the one who confidently explains the wrong one.</blockquote>
-        <a class="read-more" href="#">Read the full post ↗</a>
+        <a class="read-more" href="https://www.linkedin.com/posts/xaviera0504_dataanalytics-dataquality-hranalytics-activity-7485362962170458112-pqEb" target="_blank" rel="noopener">Read the full post ↗</a>
       </div>
       <div class="quote-card">
         <span class="mark">&ldquo;</span>
         <blockquote>A single missing column can quietly break your entire analysis.</blockquote>
-        <a class="read-more" href="#">Read the full post ↗</a>
+        <a class="read-more" href="https://www.linkedin.com/posts/xaviera0504_aianalytics-peopleanalytics-dataanalytics-activity-7483181117932511232-P9Bb" target="_blank" rel="noopener">Read the full post ↗</a>
       </div>
       <div class="quote-card">
         <span class="mark">&ldquo;</span>
         <blockquote>I built something that can replace myself as an analyst.</blockquote>
-        <a class="read-more" href="#">Read the full post ↗</a>
+        <a class="read-more" href="https://www.linkedin.com/posts/xaviera0504_hranalytics-peopleoperations-dataanalytics-activity-7481361708289257472-M0Gc" target="_blank" rel="noopener">Read the full post ↗</a>
       </div>
     </div>
   </div>
