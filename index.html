@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Xiaowen (Xaviera) Xu — People Analytics</title>
+<title>Xiaowen Xu — People Analytics</title>
 <meta name="description" content="I translate people data into decisions that matter. People analytics &amp; learning analytics across Shanghai, London, and New York.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%233C3489'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='30' fill='%23FAF6F0' text-anchor='middle'%3EX%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -191,6 +191,26 @@
   .card.placeholder h3, .card.placeholder p, .card.placeholder .stack span{color:var(--ink-faint);}
   .card.placeholder .stack span{background:transparent; border:1px dashed var(--line);}
 
+  /* ---------- Work With Me ---------- */
+  .services-intro{
+    color:var(--ink-soft); font-size:17px; max-width:62ch; margin-bottom:48px;
+  }
+  .services-steps{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:32px;
+    margin-bottom:48px;
+  }
+  .step-num{
+    font-family:var(--serif); font-size:15px; font-weight:600; color:var(--accent-2);
+    display:block; margin-bottom:10px;
+  }
+  .step h4{font-size:18px; margin-bottom:8px;}
+  .step p{color:var(--ink-soft); font-size:14.5px;}
+  .services-cta{
+    display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;
+    padding-top:32px; border-top:1px solid var(--line);
+  }
+  .services-cta p{font-family:var(--serif); font-style:italic; font-size:18px; color:var(--ink); max-width:44ch;}
+
   /* ---------- Thinking ---------- */
   .think-grid{
     display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px;
@@ -266,6 +286,7 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
       <li><a href="#work">Work</a></li>
+      <li><a href="#services">Work With Me</a></li>
       <li><a href="#thinking">Thinking</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -285,7 +306,7 @@
   </svg>
   <div class="wrap hero-content">
     <span class="eyebrow">People Analytics · Learning Analytics</span>
-    <h1>Xiaowen "Xaviera" Xu</h1>
+    <h1>Xiaowen Xu</h1>
     <p class="tagline">I translate people data into decisions that matter.</p>
     <p class="cities">Shanghai <span>→</span> London <span>→</span> New York</p>
     <div class="hero-ctas">
@@ -324,41 +345,86 @@
         </div>
       </div>
 
-      <!-- TODO: replace the placeholder cards below with real projects (title, problem, stack, links) -->
-      <div class="card placeholder">
-        <h3>Your next project</h3>
-        <p class="problem">Add the business problem this project solved, in one or two sentences.</p>
-        <div class="stack"><span>Tech stack</span></div>
+      <div class="card">
+        <h3>Investor Engagement Intelligence</h3>
+        <p class="problem">Which client relationships are quietly at risk, and what should the team do about it in the next 30 days? I built an end-to-end pipeline that turns engagement data into a plain-English leadership report — every AI call logged for auditability, so the output is explainable, not a black box.</p>
+        <div class="stack">
+          <span>Python</span><span>pandas</span><span>Streamlit</span><span>Claude API</span>
+        </div>
         <div class="card-links">
-          <a href="#">GitHub ↗</a>
-          <a href="#">Live demo ↗</a>
+          <a href="https://github.com/Xaviera0504/investor-engagement-intelligence" target="_blank" rel="noopener">GitHub ↗</a>
         </div>
       </div>
 
-      <div class="card placeholder">
-        <h3>Your next project</h3>
-        <p class="problem">Add the business problem this project solved, in one or two sentences.</p>
-        <div class="stack"><span>Tech stack</span></div>
+      <div class="card">
+        <h3>People Operations Analytics Dashboard</h3>
+        <p class="problem">Headcount, tenure, and turnover for a 2,800+ person workforce, filterable down to department and demographic — an interactive rebuild of a static Excel report the team was recreating by hand every quarter.</p>
+        <div class="stack">
+          <span>React</span><span>Recharts</span><span>Tailwind CSS</span><span>Vite</span>
+        </div>
         <div class="card-links">
-          <a href="#">GitHub ↗</a>
-          <a href="#">Live demo ↗</a>
+          <a href="https://github.com/Xaviera0504/People-Operations-Analytics-Dashboard" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="https://relaxed-daffodil-46c1fc.netlify.app/" target="_blank" rel="noopener">Live demo ↗</a>
         </div>
       </div>
 
-      <div class="card placeholder">
-        <h3>Your next project</h3>
-        <p class="problem">Add the business problem this project solved, in one or two sentences.</p>
-        <div class="stack"><span>Tech stack</span></div>
+      <div class="card">
+        <h3>HR Insights AI</h3>
+        <p class="problem">Most HR teams sit on attrition and engagement data with no analyst to translate it. I built a tool that turns a spreadsheet export into a business-ready narrative — risks, opportunities, and 30-day actions — with a full audit trail behind every claim.</p>
+        <div class="stack">
+          <span>Python</span><span>Streamlit</span><span>Claude API</span><span>pandas</span>
+        </div>
         <div class="card-links">
-          <a href="#">GitHub ↗</a>
-          <a href="#">Live demo ↗</a>
+          <a href="https://github.com/Xaviera0504/hr-ai-analytics" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="https://hr-ai-analytics-h94y7mdnzt2hzfk4t9paci.streamlit.app" target="_blank" rel="noopener">Live demo ↗</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Customer Churn &amp; Retention Strategy</h3>
+        <p class="problem">Which customer segments are leaking, and what would actually stop it? A dashboard identifying high-risk segments and translating churn drivers — like missing tech support — into specific retention plays for product stakeholders.</p>
+        <div class="stack">
+          <span>R</span><span>Shiny</span><span>Tidyverse</span>
+        </div>
+        <div class="card-links">
+          <a href="https://github.com/Xaviera0504/customer-churn-retention-strategy" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="https://xaviera0504.shinyapps.io/customer-churn-strategy/" target="_blank" rel="noopener">Live demo ↗</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="thinking">
+<section id="services">
+  <div class="wrap reveal">
+    <span class="eyebrow">Work With Me</span>
+    <h2 class="section-title">A retention model, built for your team</h2>
+    <p class="services-intro">The Employee Attrition and Customer Churn dashboards above both started from the same pattern: clean the data, find what's actually driving people to leave, build a model your team can defend, and package it into something leadership will open. I offer that as a scoped engagement — not open-ended hours.</p>
+    <div class="services-steps">
+      <div class="step">
+        <span class="step-num">01</span>
+        <h4>Diagnose</h4>
+        <p>Audit your attrition or churn data and surface the handful of signals that actually predict who leaves.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">02</span>
+        <h4>Model</h4>
+        <p>Build an explainable, SHAP-backed risk model your team can question and trust — not a black box.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">03</span>
+        <h4>Deliver</h4>
+        <p>Package it into an interactive dashboard and a one-page executive brief leadership will actually read.</p>
+      </div>
+    </div>
+    <div class="services-cta">
+      <p>Have data like this sitting in a spreadsheet? Let's talk about what it could tell you.</p>
+      <a href="#contact" class="btn btn-primary">Start the conversation</a>
+    </div>
+  </div>
+</section>
+
+<section id="thinking" style="background:var(--bg-alt);">
   <div class="wrap reveal">
     <span class="eyebrow">How I Think</span>
     <h2 class="section-title">Notes on data, AI &amp; learning</h2>
@@ -383,7 +449,7 @@
   </div>
 </section>
 
-<section id="experience" style="background:var(--bg-alt);">
+<section id="experience">
   <div class="wrap reveal">
     <span class="eyebrow">Experience</span>
     <h2 class="section-title">The path here</h2>
